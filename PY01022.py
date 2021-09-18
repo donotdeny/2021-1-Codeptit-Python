@@ -13,11 +13,10 @@ def sumOfDigits2(s):
 s = input()
 count = 0
 if(s[0] == '-'):
-    i = 0
     while(len(s) > 1):
-        if(i == 0): s = str(sumOfDigits2(s) + (ord('-') - ord('0')))
+        if(s[0] == '-'): s = str(sumOfDigits2(s) + (ord('-') - ord('0')))
         else: s = str(sumOfDigits(s))
-        i += 1
+        if(len(s) == 2 and s[0] == '-'): break
         count += 1
 else:
     while(len(s) > 1):
